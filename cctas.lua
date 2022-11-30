@@ -663,7 +663,7 @@ function cctas:hud()
 		return ""
 	end
 	local objname={"hi"}
-	local obj={this.x=1,this.y=2}
+	local obj={}
 	--TODO: make this more comprehensive and/or general?
 	-[[for i=1,#pico8.cart.objects do
 		local o=pico8.cart.objects[i]
@@ -675,6 +675,8 @@ function cctas:hud()
 		end
 	end
 	--]]
+	obj.x=2
+	obj.y=3
 	local objstr=""
 	for i=1,#objname do
 		objstring=objstring..string.format("%s, x:%s, y:%s\n", objname[i], obj.x, obj.y)
