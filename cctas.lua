@@ -667,7 +667,7 @@ function cctas:hud()
 	--TODO: make this more comprehensive and/or general?
 	for i=1,#pico8.cart.objects do
 		local o=pico8.cart.objects[i]
-		for a,b in pairs(pico8.cart._env) do
+		for a,b in pairs(pico8.cart.ENV) do
 			if o.type==b then
 				table.insert(objname,a)
 				table.insert(obj,b)
