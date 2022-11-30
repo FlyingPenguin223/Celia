@@ -662,8 +662,24 @@ function cctas:hud()
 	if p == nil then
 		return ""
 	end
+	local objname={}
+	local obj={}
 	--TODO: make this more comprehensive and/or general?
-	return ("%6s%7s\npos:% -7g% g\nrem:% -7.3f% .3f\nspd:% -7.3f% .3f\n\ngrace: %s\n\nobjects:\n%s"):format("x","y",p.x,p.y,p.rem.x,p.rem.y, p.spd.x, p.spd.y, p.grace, "test")
+	for i=1,#pico8.cart.objects do
+		local o=pico8.cart.objects[i]
+		for a,b in pairs(pico8.cart._env) do
+			if o.type==b then
+				table.insert(objname,a)
+				table.insert(obj,b)
+			end
+		end
+	end
+	local objstr=""
+	for i=1,#objname do
+		--objstring=objstring..objname[i]..", "..
+		objstring=objstring..string.format("%s, x:%s, y:%s\n", objname[i], obj.x, obj.y)
+	end
+	return ("%6s%7s\npos:% -7g% g\nrem:% -7.3f% .3f\nspd:% -7.3f% .3f\n\ngrace: %s\n\nobjects:\n"):format("x","y",p.x,p.y,p.rem.x,p.rem.y, p.spd.x, p.spd.y, p.grace)
 end
 
 function cctas:offset_camera()
