@@ -682,7 +682,7 @@ function cctas:hud()
 	for i=1,#objname do
 		objstring=objstring..string.format("%s, x:%s, y:%s\n", objname[i], obj.x, obj.y)
 	end
-	return ("%6s%7s\npos:% -7g% g\nrem:% -7.3f% .3f\nspd:% -7.3f% .3f\n\ngrace: %s\n\nobjects:\n"):format("x","y",p.x,p.y,p.rem.x,p.rem.y, p.spd.x, p.spd.y, p.grace)
+	return (("%6s%7s\npos:% -7g% g\nrem:% -7.3f% .3f\nspd:% -7.3f% .3f\n\ngrace: %s\n\nobjects:\n"):format("x","y",p.x,p.y,p.rem.x,p.rem.y, p.spd.x, p.spd.y, p.grace)..objstring)
 end
 
 function cctas:offset_camera()
