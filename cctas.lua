@@ -676,7 +676,8 @@ function cctas:hud()
 	end
 	local objstring=""
 	for i=1,#objname do
-		objstring=objstring..string.format("%s, x:%s, y:%s\n", objname[i], objs[i].x, objs[i].y)
+		--objstring=objstring..string.format("%s, x:%.1f, y:%.1f\n", objname[i], objs[i].x, objs[i].y)
+		objstring=objstring..string.format("%s\n",objname[i])
 	end
 	return (("%6s%7s\npos:% -7g% g\nrem:% -7.3f% .3f\nspd:% -7.3f% .3f\n\ngrace: %s\n\nobjects:\n"):format("x","y",p.x,p.y,p.rem.x,p.rem.y, p.spd.x, p.spd.y, p.grace)..objstring)
 end
