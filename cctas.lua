@@ -678,7 +678,7 @@ function cctas:hud()
 	obj.x=2
 	obj.y=3
 	table.insert(objname,"hi")
-	local objstr=""
+	local objstring=""
 	for i=1,#objname do
 		objstring=objstring..string.format("%s, x:%s, y:%s\n", objname[i], obj.x, obj.y)
 	end
