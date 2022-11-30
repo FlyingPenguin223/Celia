@@ -663,7 +663,7 @@ function cctas:hud()
 		return ""
 	end
 	--TODO: make this more comprehensive and/or general?
-	return ("%6s%7s\npos:% -7g% g\nrem:% -7.3f% .3f\nspd:% -7.3f% .3f\n\ngrace: %s"):format("x","y",p.x,p.y,p.rem.x,p.rem.y, p.spd.x, p.spd.y, p.grace)
+	return ("%6s%7s\npos:% -7g% g\nrem:% -7.3f% .3f\nspd:% -7.3f% .3f\n\ngrace: %s\n\nobjects:\n%s"):format("x","y",p.x,p.y,p.rem.x,p.rem.y, p.spd.x, p.spd.y, p.grace, "test")
 end
 
 function cctas:offset_camera()
