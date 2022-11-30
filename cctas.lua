@@ -663,20 +663,20 @@ function cctas:hud()
 		return ""
 	end
 	local objname={}
-	local obj={}
+	local objs={}
 	--TODO: make this more comprehensive and/or general?
 	for i=1,#pico8.cart.objects do
 		local o=pico8.cart.objects[i]
 		for a,b in pairs(pico8.cart) do
 			if o.type==b then
 				table.insert(objname,a)
-				table.insert(obj,b)
+				table.insert(objs,b)
 			end
 		end
 	end
 	local objstring=""
 	for i=1,#objname do
-		objstring=objstring..string.format("%s, x:%s, y:%s\n", objname[i], obj.x, obj.y)
+		objstring=objstring..string.format("%s, x:%s, y:%s\n", objname[i], objs[i].x, objs[i].y)
 	end
 	return (("%6s%7s\npos:% -7g% g\nrem:% -7.3f% .3f\nspd:% -7.3f% .3f\n\ngrace: %s\n\nobjects:\n"):format("x","y",p.x,p.y,p.rem.x,p.rem.y, p.spd.x, p.spd.y, p.grace)..objstring)
 end
