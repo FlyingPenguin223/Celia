@@ -670,7 +670,7 @@ function cctas:hud()
 		for a,b in pairs(pico8.cart) do
 			if o.type==b then
 				table.insert(objname,a)
-				table.insert(objs,b)
+				table.insert(objs,o)
 			end
 		end
 	end
