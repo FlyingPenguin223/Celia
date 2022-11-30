@@ -665,19 +665,15 @@ function cctas:hud()
 	local objname={}
 	local obj={}
 	--TODO: make this more comprehensive and/or general?
-	--[[for i=1,#pico8.cart.objects do
+	for i=1,#pico8.cart.objects do
 		local o=pico8.cart.objects[i]
-		for a,b in pairs(pico8.cart.env) do
+		for a,b in pairs(pico8.cart) do
 			if o.type==b then
 				table.insert(objname,a)
 				table.insert(obj,b)
 			end
 		end
 	end
-	--]]
-	obj.x=2
-	obj.y=3
-	table.insert(objname,"hi")
 	local objstring=""
 	for i=1,#objname do
 		objstring=objstring..string.format("%s, x:%s, y:%s\n", objname[i], obj.x, obj.y)
